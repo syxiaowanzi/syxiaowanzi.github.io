@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="servlet代码存放在在我的个人github下克隆地址:https://github.com/syxiaowanzi/servlet-utils.git">
+  <meta name="description" content="环境eclipse(2018-12 (4.10.0)),jdk1.8.0_191,tomcat7.0.62代码1.SafeCodeUtil.java package com.common.utils.safecode; import java.awt.Color; import java.awt.Font; import java.awt.Graphics; import java.awt.ima">
 <meta name="keywords" content="验证码 图片验证码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="servlet生成图片验证码">
 <meta property="og:url" content="https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/servlet生成图片验证码/index.html">
 <meta property="og:site_name" content="林中木屋">
-<meta property="og:description" content="servlet代码存放在在我的个人github下克隆地址:https://github.com/syxiaowanzi/servlet-utils.git">
+<meta property="og:description" content="环境eclipse(2018-12 (4.10.0)),jdk1.8.0_191,tomcat7.0.62代码1.SafeCodeUtil.java package com.common.utils.safecode; import java.awt.Color; import java.awt.Font; import java.awt.Graphics; import java.awt.ima">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://syxiaowanzi.github.io/images/2019/01/servletImgVerificationr.png">
-<meta property="og:updated_time" content="2019-01-19T01:36:33.540Z">
+<meta property="og:updated_time" content="2019-01-19T03:58:35.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="servlet生成图片验证码">
-<meta name="twitter:description" content="servlet代码存放在在我的个人github下克隆地址:https://github.com/syxiaowanzi/servlet-utils.git">
+<meta name="twitter:description" content="环境eclipse(2018-12 (4.10.0)),jdk1.8.0_191,tomcat7.0.62代码1.SafeCodeUtil.java package com.common.utils.safecode; import java.awt.Color; import java.awt.Font; import java.awt.Graphics; import java.awt.ima">
 <meta name="twitter:image" content="https://syxiaowanzi.github.io/images/2019/01/servletImgVerificationr.png">
 
 
@@ -374,7 +374,7 @@
                 
               
 
-              <time title="创建时间：2019-01-19 00:29:57 / 修改时间：09:36:33" itemprop="dateCreated datePublished" datetime="2019-01-19T00:29:57+08:00">2019-01-19</time>
+              <time title="创建时间：2019-01-19 00:29:57 / 修改时间：11:58:35" itemprop="dateCreated datePublished" datetime="2019-01-19T00:29:57+08:00">2019-01-19</time>
             
 
             
@@ -431,7 +431,199 @@
       
 
       
-        <p><strong>servlet代码存放在在我的个人github下</strong><br><img src="/images/2019/01/servletImgVerificationr.png" alt=""><br>克隆地址:<br><a href="https://github.com/syxiaowanzi/servlet-utils.git" target="_blank" rel="noopener">https://github.com/syxiaowanzi/servlet-utils.git</a></p>
+        <p><strong>环境</strong><br>eclipse(2018-12 (4.10.0)),jdk1.8.0_191,tomcat7.0.62<br><strong>代码</strong><br>1.SafeCodeUtil.java</p>
+<pre><code>package com.common.utils.safecode;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.Random;
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+/**    生成指定大小的图片验证码，返回
+ *     并将图片验证码存入session中
+ *     session对象imageCode
+ * @author admin
+ */
+public class SafeCodeUtil {
+    public static final String RANDOMCODEKEY = &quot;imageCode&quot;;//放到session中的key
+    private Random random = new Random();
+    //private String randString = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;//随机产生的字符串
+    private String randString = &quot;23456789ABCDEFGHJKLMNPRSTWXY&quot;;//随机产生的字符串
+
+    private int width = 73;//图片宽
+    private int height = 28;//图片高
+    private int lineSize = 30;//干扰线数量
+    private int stringNum = 4;//随机产生字符数量
+    /*
+     *     获得字体
+     */
+    private Font getFont(){
+        return new Font(&quot;Fixedsys&quot;,Font.CENTER_BASELINE,18);
+    }
+    /*
+     *     获得颜色
+     */
+    private Color getRandColor(int fc,int bc){
+        if(fc &gt; 255) {
+            fc = 255;
+        }
+        if(bc &gt; 255) {
+            bc = 255;
+        }
+        int r = fc + random.nextInt(bc-fc-16);
+        int g = fc + random.nextInt(bc-fc-14);
+        int b = fc + random.nextInt(bc-fc-18);
+        return new Color(r,g,b);
+    }
+    /**
+     *     生成随机图片
+     */
+    public void getRandcode(HttpServletRequest request,
+            HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        //BufferedImage类是具有缓冲区的Image类,Image类是用于描述图像信息的类
+        BufferedImage image = new BufferedImage(width,height,BufferedImage.TYPE_INT_BGR);
+        Graphics g = image.getGraphics();//产生Image对象的Graphics对象,改对象可以在图像上进行各种绘制操作
+        g.fillRect(0, 0, width, height);
+        g.setFont(new Font(&quot;Times New Roman&quot;,Font.ROMAN_BASELINE,18));
+        g.setColor(getRandColor(110, 133));
+        //绘制干扰线
+        for(int i=0;i&lt;=lineSize;i++){
+            drowLine(g);
+        }
+        //绘制随机字符
+        String randomString = &quot;&quot;;
+        for(int i=1;i&lt;=stringNum;i++){
+            randomString=drowString(g,randomString,i);
+        }
+        session.removeAttribute(RANDOMCODEKEY);
+        session.setAttribute(RANDOMCODEKEY, randomString);
+        g.dispose();
+        try {
+            ImageIO.write(image, &quot;JPEG&quot;, response.getOutputStream());//将内存中的图片通过流动形式输出到客户端
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /*
+     *     绘制字符串
+     */
+    private String drowString(Graphics g,String randomString,int i){
+        g.setFont(getFont());
+        g.setColor(new Color(random.nextInt(101),random.nextInt(111),random.nextInt(121)));
+        String rand = String.valueOf(getRandomString(random.nextInt(randString.length())));
+        randomString +=rand;
+        g.translate(random.nextInt(3), random.nextInt(3));
+        g.drawString(rand, 13*i, 16);
+        return randomString;
+    }
+    /*
+     *     绘制干扰线
+     */
+    private void drowLine(Graphics g){
+        int x = random.nextInt(width);
+        int y = random.nextInt(height);
+        int xl = random.nextInt(13);
+        int yl = random.nextInt(15);
+        g.drawLine(x, y, x+xl, y+yl);
+    }
+    /*
+     *     获取随机的字符
+     */
+    public String getRandomString(int num){
+        return String.valueOf(randString.charAt(num));
+    }
+}
+</code></pre><p>2.SafeCode.java</p>
+<pre><code>package com.common.utils.safecode;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+/**生成验证码**/
+public class SafeCode extends HttpServlet {
+    private static final long SERIAL_VERSION_UID = 1L;
+    @Override
+    public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType(&quot;image/jpeg&quot;);// 设置相应类型,告诉浏览器输出的内容为图片
+        response.setHeader(&quot;Pragma&quot;, &quot;No-cache&quot;);// 设置响应头信息，告诉浏览器不要缓存此内容
+        response.setHeader(&quot;Cache-Control&quot;, &quot;no-cache&quot;);
+        response.setDateHeader(&quot;Expire&quot;, 0);
+        SafeCodeUtil randomValidateCode = new SafeCodeUtil();
+        try {
+            randomValidateCode.getRandcode(request, response);// 输出图片方法
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre><p>3.GenerateImageCode.java</p>
+<pre><code>package com.common.utils.safecode;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.common.utils.safecode.SafeCodeUtil;
+/**
+ * @author wangming
+ *     生成随机验证码
+ * Servlet implementation class GenerateImageCode
+ */
+@WebServlet(&quot;/GenerateImageCode&quot;)
+public class GenerateImageCode extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public GenerateImageCode() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doPost(request, response);
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        response.setContentType(&quot;image/jpeg&quot;);// 设置相应类型,告诉浏览器输出的内容为图片
+        response.setHeader(&quot;Pragma&quot;, &quot;No-cache&quot;);// 设置响应头信息，告诉浏览器不要缓存此内容
+        response.setHeader(&quot;Cache-Control&quot;, &quot;no-cache&quot;);
+        response.setDateHeader(&quot;Expire&quot;, 0);
+        SafeCodeUtil randomValidateCode = new SafeCodeUtil();
+        try {
+            randomValidateCode.getRandcode(request, response);// 输出图片方法
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+</code></pre><p>4.web.xml内webapps标签添加如下代码</p>
+<pre><code>&lt;servlet&gt;
+   &lt;servlet-name&gt;SafeCode&lt;/servlet-name&gt;
+   &lt;servlet-class&gt;com.common.utils.safecode.GenerateImageCode&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+ &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;SafeCode&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/SafeCode&lt;/url-pattern&gt;
+ &lt;/servlet-mapping&gt;
+</code></pre><p><strong>访问路径与结果</strong><br><a href="http://localhost:8888/servletImgVerificationr/SafeCode，结果如下：" target="_blank" rel="noopener">http://localhost:8888/servletImgVerificationr/SafeCode，结果如下：</a><br><img src="/images/2019/01/servletImgVerificationr.png" alt=""><br>克隆地址:<br><a href="https://github.com/syxiaowanzi/servlet-utils.git" target="_blank" rel="noopener">https://github.com/syxiaowanzi/servlet-utils.git</a></p>
 
       
     </div>
@@ -441,6 +633,44 @@
     
     
     
+	
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>servlet生成图片验证码</p>
+  <p><span>文章作者:</span>wangming</p>
+  <p><span>发布时间:</span>2019年01月19日 - 00:29:57</p>
+  <p><span>最后更新:</span>2019年01月19日 - 11:58:35</p>
+  <p><span>原始链接:</span><a href="/2019/01/19/2019/01/servlet生成图片验证码/" title="servlet生成图片验证码">https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/servlet生成图片验证码/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/servlet生成图片验证码/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>
 
     
 
@@ -464,6 +694,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/19/2019/01/hexo部署与上传github/" rel="next" title="hexo部署与上传github">
+                <i class="fa fa-chevron-left"></i> hexo部署与上传github
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
@@ -523,7 +769,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -538,7 +784,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -553,7 +801,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
