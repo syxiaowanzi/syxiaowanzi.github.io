@@ -1812,6 +1812,7 @@ pre .javascript .function {
   height: auto;
   border: 1px solid #eee;
   opacity: 1;
+/**transition: 1.4s all;**/
 }
 .site-author-name {
   margin: 0;
@@ -1895,7 +1896,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #57ffff;
+  background: #91f68f;
 }
 .links-of-blogroll {
   font-size: 13px;
