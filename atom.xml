@@ -5,9 +5,9 @@
   <subtitle>记录、分享、交流</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://syxiaowanzi.github.io/index.html/"/>
+  <link href="https://syxiaowanzi.github.io/"/>
   <updated>2019-01-19T03:58:35.682Z</updated>
-  <id>https://syxiaowanzi.github.io/index.html/</id>
+  <id>https://syxiaowanzi.github.io/</id>
   
   <author>
     <name>wangming</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>servlet生成图片验证码</title>
-    <link href="https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/servlet%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
-    <id>https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/servlet生成图片验证码/</id>
+    <link href="https://syxiaowanzi.github.io/2019/01/19/2019/01/servlet%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/19/2019/01/servlet生成图片验证码/</id>
     <published>2019-01-18T16:29:57.000Z</published>
     <updated>2019-01-19T03:58:35.682Z</updated>
     
@@ -33,17 +33,17 @@
     
     </summary>
     
-      <category term="Tools" scheme="https://syxiaowanzi.github.io/index.html/categories/Tools/"/>
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
     
     
-      <category term="验证码 图片验证码" scheme="https://syxiaowanzi.github.io/index.html/tags/%E9%AA%8C%E8%AF%81%E7%A0%81-%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+      <category term="验证码 图片验证码" scheme="https://syxiaowanzi.github.io/tags/%E9%AA%8C%E8%AF%81%E7%A0%81-%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>hexo部署与上传github</title>
-    <link href="https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/hexo%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%B8%8A%E4%BC%A0github/"/>
-    <id>https://syxiaowanzi.github.io/index.html/2019/01/19/2019/01/hexo部署与上传github/</id>
+    <link href="https://syxiaowanzi.github.io/2019/01/19/2019/01/hexo%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%B8%8A%E4%BC%A0github/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/19/2019/01/hexo部署与上传github/</id>
     <published>2019-01-18T16:00:57.000Z</published>
     <updated>2019-01-19T03:39:26.113Z</updated>
     
@@ -51,10 +51,10 @@
     
     </summary>
     
-      <category term="hexo部署" scheme="https://syxiaowanzi.github.io/index.html/categories/hexo%E9%83%A8%E7%BD%B2/"/>
+      <category term="hexo部署" scheme="https://syxiaowanzi.github.io/categories/hexo%E9%83%A8%E7%BD%B2/"/>
     
     
-      <category term="hexo部署 hexo上传github" scheme="https://syxiaowanzi.github.io/index.html/tags/hexo%E9%83%A8%E7%BD%B2-hexo%E4%B8%8A%E4%BC%A0github/"/>
+      <category term="hexo部署 hexo上传github" scheme="https://syxiaowanzi.github.io/tags/hexo%E9%83%A8%E7%BD%B2-hexo%E4%B8%8A%E4%BC%A0github/"/>
     
   </entry>
   
