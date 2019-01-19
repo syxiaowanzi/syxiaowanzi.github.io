@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[hexo部署与上传github]]></title>
     <url>%2F2019%2F01%2F19%2F2019%2F01%2Fhexo%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%B8%8A%E4%BC%A0github%2F</url>
-    <content type="text"><![CDATA[this is helloworld]]></content>
+    <content type="text"><![CDATA[环境winds10,github账户 搭建nodejs安装（我的版本v.10.15.0） 安装git与git客户端安装hexo,可以随便选择文件夹npm install -g hexo-cli hexo初始化与启动hexo init //初始化hexo generate //生成静态页面可以简写成 hexo ghexo server //启动可以简写成 hexo s 默认端口4000 访问本地即可看到一个helloworldhttp://localhost:4000 安装部署到github插件依赖，在站点根目录执行npm install hexo-deployer-git –save github上创建空博客创建新的仓库这里注意例如图中syxiaowanzi.github.io中syxiaowanzi必须是拥有者https://syxiaowanzi.github.io 本地hexo关联github上的博客hexo目录下_config.yml文件最下面添加 deploy: &nbsp;&nbsp;&nbsp;&nbsp;type: git &nbsp;&nbsp;&nbsp;&nbsp;repo: https://github.com/syxiaowanzi/syxiaowanzi.github.io.git &nbsp;&nbsp;&nbsp;&nbsp;branch: master 生成rsakeyssh-keygen -t rsa -C &quot;your github email” 默认会在C:\Users\yourPC.rsa生成连个文件id_rsa.pub与id_rsa 打开id_rsa.pub文件复制内容放到我们当前博客的仓库中 本地上传githubhexo clean //清除缓存文件 (db.json) 和已生成的静态文件 (public)hexo g //生成缓存和静态文件hexo d //重新部署到服务器 访问你的github博客即可看到helloworld优化博客我们可以选择多种优化主题，优化菜单等参考链接：https://blog.csdn.net/qq_32454537/article/details/79482896https://www.jianshu.com/p/efbeddc5eb19https://www.jianshu.com/p/56d99a3049a5]]></content>
       <categories>
         <category>hexo部署</category>
       </categories>
