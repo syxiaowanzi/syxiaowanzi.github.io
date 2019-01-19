@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="自己选择的路，跪着也要走完。">
+  <meta name="description" content="this is helloworld">
 <meta name="keywords" content="hexo部署 hexo上传github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo部署与上传github">
 <meta property="og:url" content="https://syxiaowanzi.github.io/2019/01/19/2019/01/hexo部署与上传github/index.html">
 <meta property="og:site_name" content="林中木屋">
-<meta property="og:description" content="自己选择的路，跪着也要走完。">
+<meta property="og:description" content="this is helloworld">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-19T03:39:26.113Z">
+<meta property="og:updated_time" content="2019-01-19T06:24:15.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo部署与上传github">
-<meta name="twitter:description" content="自己选择的路，跪着也要走完。">
+<meta name="twitter:description" content="this is helloworld">
 
 
 
@@ -168,7 +168,7 @@
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+	
   
   
     
@@ -401,7 +401,7 @@
                 
               
 
-              <time title="创建时间：2019-01-19 00:00:57 / 修改时间：11:39:26" itemprop="dateCreated datePublished" datetime="2019-01-19T00:00:57+08:00">2019-01-19</time>
+              <time title="创建时间：2019-01-19 00:01:03 / 修改时间：14:24:15" itemprop="dateCreated datePublished" datetime="2019-01-19T00:01:03+08:00">2019-01-19</time>
             
 
             
@@ -458,7 +458,8 @@
       
 
       
-        
+        <p>this is helloworld</p>
+
       
     </div>
 
@@ -1201,6 +1202,83 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
 
   
 
