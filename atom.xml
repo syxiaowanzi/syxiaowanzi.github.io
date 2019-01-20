@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-20T10:22:57.095Z</updated>
+  <updated>2019-01-20T13:37:23.567Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>redis使用</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/20/redis%E4%BD%BF%E7%94%A8/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/20/redis使用/</id>
+    <published>2019-01-20T11:14:53.000Z</published>
+    <updated>2019-01-20T13:37:23.567Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;jdk1.8、redis数据库&lt;br&gt;commons-logging-1.0.4.jar&lt;br&gt;commons-pool2-2.6.0.jar&lt;br&gt;jedis-2.9.0.jar&lt;br&gt;log4j-1.2.16.jar&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="redis redis工具类" scheme="https://syxiaowanzi.github.io/tags/redis-redis%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo加上评论系统-Valine</title>
@@ -43,7 +64,7 @@
     <link href="https://syxiaowanzi.github.io/2019/01/19/servlet%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
     <id>https://syxiaowanzi.github.io/2019/01/19/servlet生成图片验证码/</id>
     <published>2019-01-18T16:29:57.000Z</published>
-    <updated>2019-01-20T10:24:14.959Z</updated>
+    <updated>2019-01-20T11:56:39.888Z</updated>
     
     <summary type="html">
     
