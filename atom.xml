@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-19T03:58:35.682Z</updated>
+  <updated>2019-01-20T06:33:45.884Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo加上评论系统-Valine</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/20/Hexo%E5%8A%A0%E4%B8%8A%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F-Valine/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/20/Hexo加上评论系统-Valine/</id>
+    <published>2019-01-20T06:09:44.000Z</published>
+    <updated>2019-01-20T06:33:45.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;hexo v3.8.0 、NexT.Pisces v6.7.0、leancloud&lt;/p&gt;
+&lt;h2 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤
+      
+    
+    </summary>
+    
+      <category term="hexo-next主题优化" scheme="https://syxiaowanzi.github.io/categories/hexo-next%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="hexo添加评论 hexo next主题添加评论" scheme="https://syxiaowanzi.github.io/tags/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA-hexo-next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>servlet生成图片验证码</title>
-    <link href="https://syxiaowanzi.github.io/2019/01/19/2019/01/servlet%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
-    <id>https://syxiaowanzi.github.io/2019/01/19/2019/01/servlet生成图片验证码/</id>
+    <link href="https://syxiaowanzi.github.io/2019/01/19/servlet%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/19/servlet生成图片验证码/</id>
     <published>2019-01-18T16:29:57.000Z</published>
-    <updated>2019-01-19T03:58:35.682Z</updated>
+    <updated>2019-01-20T06:34:36.559Z</updated>
     
     <summary type="html">
     
@@ -42,10 +66,10 @@
   
   <entry>
     <title>hexo部署与上传github</title>
-    <link href="https://syxiaowanzi.github.io/2019/01/19/2019/01/hexo%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%B8%8A%E4%BC%A0github/"/>
-    <id>https://syxiaowanzi.github.io/2019/01/19/2019/01/hexo部署与上传github/</id>
+    <link href="https://syxiaowanzi.github.io/2019/01/19/hexo%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%B8%8A%E4%BC%A0github/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/19/hexo部署与上传github/</id>
     <published>2019-01-18T16:01:03.000Z</published>
-    <updated>2019-01-19T10:53:20.271Z</updated>
+    <updated>2019-01-20T06:34:30.643Z</updated>
     
     <summary type="html">
     
