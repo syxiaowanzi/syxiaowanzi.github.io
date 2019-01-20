@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo加上评论系统-Valine]]></title>
     <url>%2F2019%2F01%2F20%2FHexo%E5%8A%A0%E4%B8%8A%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F-Valine%2F</url>
-    <content type="text"><![CDATA[环境hexo v3.8.0 、NexT.Pisces v6.7.0、leancloud 步骤leadcloud官网注册账号登陆leadcloud官网 注册 创建应用应用名称可以自定义 获取appid与appkey创建之后进入应用-设置-应用key 进入博客next主题配置文件中修改搜素valine找到一下内容，修改enable，粘贴id、key，重新打包文件valine:&nbsp;&nbsp;&nbsp;&nbsp;enable: true&nbsp;&nbsp;&nbsp;&nbsp;appid:&nbsp;&nbsp;&nbsp;&nbsp;appkey:&nbsp;&nbsp;&nbsp;&nbsp;notify: false&nbsp;&nbsp;&nbsp;&nbsp;verify: false&nbsp;&nbsp;&nbsp;&nbsp;placeholder: 说点什么…&nbsp;&nbsp;&nbsp;&nbsp;avatar: mm&nbsp;&nbsp;&nbsp;&nbsp;guest_info: nick,mail,link&nbsp;&nbsp;&nbsp;&nbsp;pageSize: 10&nbsp;&nbsp;&nbsp;&nbsp;visitor: false&nbsp;&nbsp;&nbsp;&nbsp;comment_count: true 刷新页面评论测试假如第一次不成功，等两分钟后重新测试 参考地址https://blog.csdn.net/blue_zy/article/details/79071414]]></content>
+    <content type="text"><![CDATA[环境hexo v3.8.0 、NexT.Pisces v6.7.0、leancloud 步骤leadcloud官网注册账号登陆leadcloud官网 注册 创建应用应用名称可以自定义 获取appid与appkey创建之后进入应用-设置-应用key 进入博客next主题配置文件中修改搜素valine找到一下内容，修改enable，粘贴id、key，重新打包文件valine:&nbsp;&nbsp;&nbsp;&nbsp;enable: true&nbsp;&nbsp;&nbsp;&nbsp;appid:&nbsp;&nbsp;&nbsp;&nbsp;appkey:&nbsp;&nbsp;&nbsp;&nbsp;notify: false&nbsp;&nbsp;&nbsp;&nbsp;verify: false&nbsp;&nbsp;&nbsp;&nbsp;placeholder: 说点什么…&nbsp;&nbsp;&nbsp;&nbsp;avatar: mm&nbsp;&nbsp;&nbsp;&nbsp;guest_info: nick,mail,link&nbsp;&nbsp;&nbsp;&nbsp;pageSize: 10&nbsp;&nbsp;&nbsp;&nbsp;visitor: false&nbsp;&nbsp;&nbsp;&nbsp;comment_count: true 刷新页面评论测试假如第一次不成功，等两分钟后重新测试 假如某一页面不想加评论在顶部添加comments: false，同样适用与标签与分类 参考地址https://blog.csdn.net/blue_zy/article/details/79071414]]></content>
       <categories>
         <category>hexo-next主题优化</category>
       </categories>
