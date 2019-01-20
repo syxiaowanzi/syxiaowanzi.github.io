@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-20T13:37:23.567Z</updated>
+  <updated>2019-01-20T17:19:35.170Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://syxiaowanzi.github.io/2019/01/20/redis%E4%BD%BF%E7%94%A8/"/>
     <id>https://syxiaowanzi.github.io/2019/01/20/redis使用/</id>
     <published>2019-01-20T11:14:53.000Z</published>
-    <updated>2019-01-20T13:37:23.567Z</updated>
+    <updated>2019-01-20T17:19:35.170Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;jdk1.8、redis数据库&lt;br&gt;commons-logging-1.0.4.jar&lt;br&gt;commons-pool2-2.6.0.jar&lt;br&gt;jedis-2.9.0.jar&lt;br&gt;log4j-1.2.16.jar&lt;/p&gt;
+      &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;jdk1.8、redis数据库&lt;br&gt;commons-pool2-2.6.0.jar&lt;br&gt;jedis-2.9.0.jar&lt;br&gt;commons-logging-1.0.4.jar&lt;br&gt;log4j-1.2.16.jar&lt;/p&gt;
 &lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;
     
     </summary>
