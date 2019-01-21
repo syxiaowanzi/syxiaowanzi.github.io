@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-21T18:07:59.742Z</updated>
+  <updated>2019-01-21T18:09:45.919Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -21,14 +21,12 @@
     <link href="https://syxiaowanzi.github.io/2019/01/22/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
     <id>https://syxiaowanzi.github.io/2019/01/22/java发送邮件/</id>
     <published>2019-01-21T17:36:27.000Z</published>
-    <updated>2019-01-21T18:07:59.742Z</updated>
+    <updated>2019-01-21T18:09:45.919Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;jdk1.8&lt;br&gt;activation.jar&lt;br&gt;javax.mail-1.6.2.jar&lt;br&gt;log4j-1.2.12.jar&lt;b
-      
+      &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;jdk1.8&lt;br&gt;activation.jar&lt;br&gt;javax.mail-1.6.2.jar&lt;br&gt;log4j-1.2.12.jar&lt;br&gt;commons-logging-1.1.1.jar&lt;/p&gt;
+&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h2&gt;&lt;h3 id=&quot;开启服务&quot;&gt;&lt;a href=&quot;#开启服务&quot; class=&quot;headerlink&quot; title=&quot;开启服务&quot;&gt;&lt;/a&gt;开启服务&lt;/h3&gt;&lt;p&gt;以qq邮箱为例，开启POP3/SMTP-IMAP/SMTP服务&lt;br&gt;邮箱-设置-账户&lt;br&gt;
     
     </summary>
     
