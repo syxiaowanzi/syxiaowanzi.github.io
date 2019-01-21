@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-20T17:19:35.170Z</updated>
+  <updated>2019-01-21T09:36:40.913Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java回调函数</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java回调函数/</id>
+    <published>2019-01-21T09:32:04.000Z</published>
+    <updated>2019-01-21T09:36:40.913Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;java回调函数&quot;&gt;&lt;a href=&quot;#java回调函数&quot; class=&quot;headerlink&quot; title=&quot;java回调函数&quot;&gt;&lt;/a&gt;java回调函数&lt;/h2&gt;&lt;p&gt;简单来说，就是客户端调用服务起执行一个函数，当服务器端执行完成之后反过来调用客户端的函数，比如ajax进行异步调用。&lt;/p&gt;
+&lt;h2 id=&quot;简单示例&quot;&gt;&lt;a href=&quot;#简单示例&quot; class=&quot;headerlink&quot; title=&quot;简单示例&quot;&gt;&lt;/a&gt;简单示例&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://syxiaowanzi.github.io/categories/java/"/>
+    
+    
+      <category term="回调函数 java回调函数" scheme="https://syxiaowanzi.github.io/tags/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0-java%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java反射</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E5%8F%8D%E5%B0%84/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java反射/</id>
+    <published>2019-01-21T09:13:29.000Z</published>
+    <updated>2019-01-21T09:24:41.339Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是反射？&quot;&gt;&lt;a href=&quot;#什么是反射？&quot; class=&quot;headerlink&quot; title=&quot;什么是反射？&quot;&gt;&lt;/a&gt;什么是反射？&lt;/h2&gt;&lt;p&gt;Java反射就是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；并且能改变它的属性。&lt;/p&gt;
+&lt;h2 id=&quot;反射作用？&quot;&gt;&lt;a href=&quot;#反射作用？&quot; class=&quot;headerlink&quot; title=&quot;反射作用？&quot;&gt;&lt;/a&gt;反射作用？&lt;/h2&gt;&lt;p&gt;我们知道反射机制允许程序在运行时取得任何一个已知名称的class的内部信息，包括包括其modifiers(修饰符)，fields(属性)，methods(方法)等，并可于运行时改变fields内容或调用methods。那么我们便可以更灵活的编写代码，代码可以在运行时装配，无需在组件之间进行源代码链接，降低代码的耦合度；还有动态代理的实现等等；&lt;/p&gt;
+&lt;h2 id=&quot;实现示例&quot;&gt;&lt;a href=&quot;#实现示例&quot; class=&quot;headerlink&quot; title=&quot;实现示例&quot;&gt;&lt;/a&gt;实现示例&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://syxiaowanzi.github.io/categories/java/"/>
+    
+    
+      <category term="反射 java反射" scheme="https://syxiaowanzi.github.io/tags/%E5%8F%8D%E5%B0%84-java%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
   
   <entry>
     <title>redis使用</title>
