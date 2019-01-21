@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="自己选择的路，跪着也要走完。">
-<meta name="keywords" content="java css linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="林中木屋">
-<meta property="og:url" content="https://syxiaowanzi.github.io/index.html">
+  <meta name="description" content="java多线程Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。 线程生命周期1.新建状态（New）：新创建了一个线程对象。2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。3.运行状态（Runnin">
+<meta name="keywords" content="多线程 java多线程 同步方法与同步代码快">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java多线程">
+<meta property="og:url" content="https://syxiaowanzi.github.io/2019/01/21/java多线程/index.html">
 <meta property="og:site_name" content="林中木屋">
-<meta property="og:description" content="自己选择的路，跪着也要走完。">
+<meta property="og:description" content="java多线程Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。 线程生命周期1.新建状态（New）：新创建了一个线程对象。2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。3.运行状态（Runnin">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-21T10:36:24.049Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="林中木屋">
-<meta name="twitter:description" content="自己选择的路，跪着也要走完。">
+<meta name="twitter:title" content="java多线程">
+<meta name="twitter:description" content="java多线程Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。 线程生命周期1.新建状态（New）：新创建了一个线程对象。2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。3.运行状态（Runnin">
 
 
 
@@ -115,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="https://syxiaowanzi.github.io/">
+  <link rel="canonical" href="https://syxiaowanzi.github.io/2019/01/21/java多线程/">
 
 
 
@@ -125,7 +126,7 @@
   };
 </script>
 
-  <title>林中木屋</title>
+  <title>java多线程 | 林中木屋</title>
   
 
 
@@ -173,8 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -215,7 +215,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -357,9 +357,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -391,10 +391,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/21/java多线程/" class="post-title-link" itemprop="url">java多线程</a>
+          <h1 class="post-title" itemprop="name headline">java多线程
+
               
             
           </h1>
@@ -470,192 +468,15 @@
           
 
           
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h2><p>Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</p>
-<h2 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h2><p>1.新建状态（New）：新创建了一个线程对象。<br>2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。<br>3.运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。<br>4.阻塞状态（Blocked）阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/21/java多线程/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syxiaowanzi.github.io/2019/01/21/java回调函数/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangming">
-      <meta itemprop="description" content="自己选择的路，跪着也要走完。">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林中木屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/21/java回调函数/" class="post-title-link" itemprop="url">java回调函数</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-21 17:32:04 / 修改时间：17:36:40" itemprop="dateCreated datePublished" datetime="2019-01-21T17:32:04+08:00">2019-01-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-              
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <a href="/2019/01/21/java回调函数/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/21/java回调函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
@@ -672,19 +493,14 @@
       
 
       
-        
-          <h2 id="java回调函数"><a href="#java回调函数" class="headerlink" title="java回调函数"></a>java回调函数</h2><p>简单来说，就是客户端调用服务起执行一个函数，当服务器端执行完成之后反过来调用客户端的函数，比如ajax进行异步调用。</p>
-<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/21/java回调函数/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <h2 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h2><p>Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</p>
+<h2 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h2><p>1.新建状态（New）：新创建了一个线程对象。<br>2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。<br>3.运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。<br>4.阻塞状态（Blocked）阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br><a id="more"></a><br>4.1 等待阻塞：运行的线程执行wait()方法，JVM会把该线程放入等待池中。<br>4.2 同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池中。<br>4.3 其他阻塞：运行的线程执行sleep()或join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。<br>5.死亡状态（Dead）：线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</p>
+<h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h2><p>每一个 Java 线程都有一个优先级，这样有助于操作系统确定线程的调度顺序。<br>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。<br>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
+<h2 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h2><h3 id="通过实现-Runnable接口"><a href="#通过实现-Runnable接口" class="headerlink" title="通过实现 Runnable接口"></a>通过实现 Runnable接口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line">/**</span><br><span class="line"> * 输出ABCABCABCABCABCABCABCABCABCABC</span><br><span class="line"> * @author ming</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">class RunnableDemo implements Runnable&#123;</span><br><span class="line">	private String name;     </span><br><span class="line">    private Object prev;     </span><br><span class="line">    private Object self;     </span><br><span class="line">    </span><br><span class="line">    private RunnableDemo(String name, Object prev, Object self) &#123;     </span><br><span class="line">        this.name = name;     </span><br><span class="line">        this.prev = prev;     </span><br><span class="line">        this.self = self;     </span><br><span class="line">    &#125;     </span><br><span class="line">    </span><br><span class="line">    @Override    </span><br><span class="line">    public void run() &#123;     </span><br><span class="line">        int count = 10;     </span><br><span class="line">        while (count &gt; 0) &#123;     </span><br><span class="line">            synchronized (prev) &#123;     </span><br><span class="line">                synchronized (self) &#123;     </span><br><span class="line">                    System.out.print(name);     </span><br><span class="line">                    count--;    </span><br><span class="line">                      </span><br><span class="line">                    self.notify();     </span><br><span class="line">                &#125;     </span><br><span class="line">                try &#123;     </span><br><span class="line">                    prev.wait();     </span><br><span class="line">                &#125; catch (InterruptedException e) &#123;     </span><br><span class="line">                    e.printStackTrace();     </span><br><span class="line">                &#125;     </span><br><span class="line">            &#125;     </span><br><span class="line">    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) throws Exception &#123;     </span><br><span class="line">        Object a = new Object();     </span><br><span class="line">        Object b = new Object();     </span><br><span class="line">        Object c = new Object();     </span><br><span class="line">        RunnableDemo pa = new RunnableDemo(&quot;A&quot;, c, a);     </span><br><span class="line">        RunnableDemo pb = new RunnableDemo(&quot;B&quot;, a, b);     </span><br><span class="line">        RunnableDemo pc = new RunnableDemo(&quot;C&quot;, b, c);     </span><br><span class="line">             </span><br><span class="line">        new Thread(pa).start();  </span><br><span class="line">        Thread.sleep(100);   </span><br><span class="line">        new Thread(pb).start();  </span><br><span class="line">        Thread.sleep(100);    </span><br><span class="line">        new Thread(pc).start();     </span><br><span class="line">        Thread.sleep(100);    </span><br><span class="line">     &#125;     </span><br><span class="line">&#125;       </span><br></pre></td></tr></table></figure>
+<h3 id="通过继承-Thread类本身"><a href="#通过继承-Thread类本身" class="headerlink" title="通过继承 Thread类本身"></a>通过继承 Thread类本身</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line">class Thread1 extends Thread&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	public Thread1(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125; </span><br><span class="line">	public void run() &#123;</span><br><span class="line">		for(int i=0; i&lt;5; i++) &#123;</span><br><span class="line">			System.out.println(name+i);</span><br><span class="line">			try &#123;</span><br><span class="line">				sleep((int)Math.random()*10);</span><br><span class="line">			&#125;catch(InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class ExtendsTreadDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+&quot;主线程运行开始!&quot;);</span><br><span class="line">		Thread1 thread1 = new Thread1(&quot;A&quot;);</span><br><span class="line">		Thread1 thread2 = new Thread1(&quot;B&quot;);</span><br><span class="line">		thread1.start();</span><br><span class="line">		try &#123;</span><br><span class="line">			thread1.join();</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		thread2.start();</span><br><span class="line">		try &#123;</span><br><span class="line">			thread2.join();</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+ &quot;主线程运行结束!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过-Callable和-Future创建线程"><a href="#通过-Callable和-Future创建线程" class="headerlink" title="通过 Callable和 Future创建线程"></a>通过 Callable和 Future创建线程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line">import java.util.concurrent.Callable;</span><br><span class="line">import java.util.concurrent.ExecutionException;</span><br><span class="line">import java.util.concurrent.FutureTask;</span><br><span class="line">public class CallableThreadDemo implements Callable&lt;Integer&gt; &#123;</span><br><span class="line">    public static void main(String[] args)  </span><br><span class="line">    &#123;  </span><br><span class="line">        CallableThreadDemo ctt = new CallableThreadDemo();  </span><br><span class="line">        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(ctt);  </span><br><span class="line">        for(int i = 0;i &lt; 10;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot; 的循环变量i的值&quot;+i);  </span><br><span class="line">            if(i==5)  </span><br><span class="line">            &#123;  </span><br><span class="line">                new Thread(ft,&quot;有返回值的线程&quot;).start();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        try  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(&quot;子线程的返回值：&quot;+ft.get());  </span><br><span class="line">        &#125; catch (InterruptedException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; catch (ExecutionException e)  </span><br><span class="line">        &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">    &#125;</span><br><span class="line">    @Override  </span><br><span class="line">    public Integer call() throws Exception  </span><br><span class="line">    &#123;  </span><br><span class="line">        int i = 0;  </span><br><span class="line">        for(;i&lt;10;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            System.out.println(Thread.currentThread().getName()+&quot;call:&quot;+i);  </span><br><span class="line">        &#125;  </span><br><span class="line">        return i;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="同步代码块与同步方法"><a href="#同步代码块与同步方法" class="headerlink" title="同步代码块与同步方法"></a>同步代码块与同步方法</h2><p>这两个方法用的是一把锁，同步方法直接在方法上加synchronized实现加锁，同步代码块则在方法内部加锁，很明显，同步方法锁的范围比较大，而同步代码块范围要小点，一般同步的范围越大，性能就越差，一般需要加锁进行同步的时候，肯定是范围越小越好，这样性能更好。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line">public class SynchronizedDemo &#123;</span><br><span class="line">	public synchronized void test1() &#123;</span><br><span class="line">		for(int i= 0;i&lt;5 ; i++) &#123;</span><br><span class="line">			System.out.println(Thread.currentThread().getName()+&quot;:&quot;+i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void test2() &#123;</span><br><span class="line">		synchronized (this) &#123;</span><br><span class="line">			for(int i= 0;i&lt;5 ; i++) &#123;</span><br><span class="line">				System.out.println(Thread.currentThread().getName()+&quot;:&quot;+i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		SynchronizedDemo sd = new SynchronizedDemo();</span><br><span class="line">		Thread t1 = new Thread(new Runnable() &#123;public void run() &#123;sd.test1();&#125;&#125;);</span><br><span class="line">		Thread t2 = new Thread(new Runnable() &#123;public void run() &#123;sd.test2();&#125;&#125;);</span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -696,6 +512,43 @@
 	
 	<div>
       
+        
+<div class="my_post_copyright">
+  <script src="/js/src/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>java多线程</p>
+  <p><span>文章作者:</span>wangming</p>
+  <p><span>发布时间:</span>2019年01月21日 - 17:59:01</p>
+  <p><span>最后更新:</span>2019年01月21日 - 18:36:24</p>
+  <p><span>原始链接:</span><a href="/2019/01/21/java多线程/" title="java多线程">https://syxiaowanzi.github.io/2019/01/21/java多线程/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syxiaowanzi.github.io/2019/01/21/java多线程/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<!--
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));
+     
+</script>
+--> 
+
+      
 	</div>
 
     
@@ -709,580 +562,89 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syxiaowanzi.github.io/2019/01/21/java反射/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangming">
-      <meta itemprop="description" content="自己选择的路，跪着也要走完。">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林中木屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/21/java反射/" class="post-title-link" itemprop="url">java反射</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-21 17:13:29 / 修改时间：17:24:41" itemprop="dateCreated datePublished" datetime="2019-01-21T17:13:29+08:00">2019-01-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/多线程-java多线程-同步方法与同步代码快/" rel="tag"><i class="fa fa-tag"></i> 多线程 java多线程 同步方法与同步代码快</a>
           
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <a href="/2019/01/21/java反射/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/21/java反射/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
+      
+        <div class="post-widgets">
         
-          <h2 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h2><p>Java反射就是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；并且能改变它的属性。</p>
-<h2 id="反射作用？"><a href="#反射作用？" class="headerlink" title="反射作用？"></a>反射作用？</h2><p>我们知道反射机制允许程序在运行时取得任何一个已知名称的class的内部信息，包括包括其modifiers(修饰符)，fields(属性)，methods(方法)等，并可于运行时改变fields内容或调用methods。那么我们便可以更灵活的编写代码，代码可以在运行时装配，无需在组件之间进行源代码链接，降低代码的耦合度；还有动态代理的实现等等；</p>
-<h2 id="实现示例"><a href="#实现示例" class="headerlink" title="实现示例"></a>实现示例</h2>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/21/java反射/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
+
         
-      
-    </div>
 
-    
-
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
   </div>
-  
-  
-  
-  </article>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
 
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syxiaowanzi.github.io/2019/01/20/redis使用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangming">
-      <meta itemprop="description" content="自己选择的路，跪着也要走完。">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林中木屋">
-    </span>
-
-    
-      <header class="post-header">
-
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+              </div>
+            
+            
+          </div>
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/20/redis使用/" class="post-title-link" itemprop="url">redis使用</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-20 19:14:53" itemprop="dateCreated datePublished" datetime="2019-01-20T19:14:53+08:00">2019-01-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-21 01:19:35" itemprop="dateModified" datetime="2019-01-21T01:19:35+08:00">2019-01-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <a href="/2019/01/20/redis使用/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/20/redis使用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>jdk1.8、redis数据库<br>commons-pool2-2.6.0.jar<br>jedis-2.9.0.jar<br>commons-logging-1.0.4.jar<br>log4j-1.2.16.jar</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/20/redis使用/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/21/java回调函数/" rel="next" title="java回调函数">
+                <i class="fa fa-chevron-left"></i> java回调函数
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://syxiaowanzi.github.io/2019/01/20/Hexo加上评论系统-Valine/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangming">
-      <meta itemprop="description" content="自己选择的路，跪着也要走完。">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林中木屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/20/Hexo加上评论系统-Valine/" class="post-title-link" itemprop="url">Hexo加上评论系统-Valine</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-20 14:09:44 / 修改时间：18:22:57" itemprop="dateCreated datePublished" datetime="2019-01-20T14:09:44+08:00">2019-01-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo-next主题优化/" itemprop="url" rel="index"><span itemprop="name">hexo-next主题优化</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <a href="/2019/01/20/Hexo加上评论系统-Valine/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/20/Hexo加上评论系统-Valine/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>hexo v3.8.0 、NexT.Pisces v6.7.0、leancloud</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="leadcloud官网注册账号"><a href="#leadcloud官网注册账号" class="headerlink" title="leadcloud官网注册账号"></a>leadcloud官网注册账号</h3><p><a href="https://leancloud.cn" target="_blank" rel="noopener">登陆leadcloud官网 </a>注册</p>
-<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/01/20/Hexo加上评论系统-Valine/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1292,18 +654,19 @@
   </article>
 
 
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1324,8 +687,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1489,6 +861,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java多线程"><span class="nav-number">1.</span> <span class="nav-text">java多线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程生命周期"><span class="nav-number">2.</span> <span class="nav-text">线程生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的优先级"><span class="nav-number">3.</span> <span class="nav-text">线程的优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建线程"><span class="nav-number">4.</span> <span class="nav-text">创建线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过实现-Runnable接口"><span class="nav-number">4.1.</span> <span class="nav-text">通过实现 Runnable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过继承-Thread类本身"><span class="nav-number">4.2.</span> <span class="nav-text">通过继承 Thread类本身</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-Callable和-Future创建线程"><span class="nav-number">4.3.</span> <span class="nav-text">通过 Callable和 Future创建线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步代码块与同步方法"><span class="nav-number">5.</span> <span class="nav-text">同步代码块与同步方法</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -1639,6 +1028,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -1678,6 +1071,8 @@
 
 
 
+
+  
 
 
   
