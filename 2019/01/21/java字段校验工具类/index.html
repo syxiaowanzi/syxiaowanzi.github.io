@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="描述判断传入的字符串 是否符合特定的格式（非空 、手机号、验证固定电话、日期、邮箱、身份证号、姓名、验证英文名、邮编、验证出生日期、数字、小数点后两位的数字 、护照、企业姓名、企业证件号、台湾居民来往大陆通行证,港澳同胞回乡证、校验军官证、校验出生证明、校验港澳台居民居住证） 代码FieldValidationUtil.java">
+<meta name="keywords" content="java字段校验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java字段校验工具类">
+<meta property="og:url" content="https://syxiaowanzi.github.io/2019/01/21/java字段校验工具类/index.html">
+<meta property="og:site_name" content="林中木屋">
+<meta property="og:description" content="描述判断传入的字符串 是否符合特定的格式（非空 、手机号、验证固定电话、日期、邮箱、身份证号、姓名、验证英文名、邮编、验证出生日期、数字、小数点后两位的数字 、护照、企业姓名、企业证件号、台湾居民来往大陆通行证,港澳同胞回乡证、校验军官证、校验出生证明、校验港澳台居民居住证） 代码FieldValidationUtil.java">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-21T16:03:23.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java字段校验工具类">
+<meta name="twitter:description" content="描述判断传入的字符串 是否符合特定的格式（非空 、手机号、验证固定电话、日期、邮箱、身份证号、姓名、验证英文名、邮编、验证出生日期、数字、小数点后两位的数字 、护照、企业姓名、企业证件号、台湾居民来往大陆通行证,港澳同胞回乡证、校验军官证、校验出生证明、校验港澳台居民居住证） 代码FieldValidationUtil.java">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="林中木屋" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://syxiaowanzi.github.io/2019/01/21/java字段校验工具类/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java字段校验工具类 | 林中木屋</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+	
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">林中木屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">记录、分享、交流</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-list"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://syxiaowanzi.github.io/2019/01/21/java字段校验工具类/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangming">
+      <meta itemprop="description" content="自己选择的路，跪着也要走完。">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林中木屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java字段校验工具类
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-21 23:49:05" itemprop="dateCreated datePublished" datetime="2019-01-21T23:49:05+08:00">2019-01-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-22 00:03:23" itemprop="dateModified" datetime="2019-01-22T00:03:23+08:00">2019-01-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2019/01/21/java字段校验工具类/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/21/java字段校验工具类/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>判断传入的字符串 是否符合特定的格式（非空 、手机号、验证固定电话、日期、邮箱、身份证号、姓名、验证英文名、邮编、验证出生日期、数字、小数点后两位的数字 、护照、企业姓名、企业证件号、台湾居民来往大陆通行证,港澳同胞回乡证、校验军官证、校验出生证明、校验港澳台居民居住证）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="FieldValidationUtil-java"><a href="#FieldValidationUtil-java" class="headerlink" title="FieldValidationUtil.java"></a>FieldValidationUtil.java</h3><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br></pre></td><td class="code"><pre><span class="line">package com.common.utils.register;</span><br><span class="line">import java.text.ParseException;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Calendar;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.GregorianCalendar;</span><br><span class="line">import java.util.Hashtable;</span><br><span class="line">import java.util.regex.Matcher;</span><br><span class="line">import java.util.regex.Pattern;</span><br><span class="line">/**</span><br><span class="line"> * 	判断 传入的字符串 是否符合特定的格式</span><br><span class="line"> * </span><br><span class="line"> * @author 王明 </span><br><span class="line"> * @date 2018-11-18</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class FieldValidationUtil &#123;  </span><br><span class="line">	</span><br><span class="line">    /**</span><br><span class="line">     *	 根据验证类型 判断传入的字符串是否符合规则</span><br><span class="line">     * @author wangming</span><br><span class="line">     * </span><br><span class="line">     * 0	非空 </span><br><span class="line">     * 1	手机号</span><br><span class="line">     * 2	验证固定电话</span><br><span class="line">     * 3	日期(支持 yyyy-MM-dd和yyyyMMdd)</span><br><span class="line">     * 4	邮箱</span><br><span class="line">     * 4	身份证号</span><br><span class="line">     * 6	姓名</span><br><span class="line">     * 7	验证英文名</span><br><span class="line">     * 8	邮编</span><br><span class="line">     * 9	验证出生日期</span><br><span class="line">     * 10	数字</span><br><span class="line">     * 11	小数点后两位的数字  </span><br><span class="line">     * 12	护照</span><br><span class="line">     * 13	企业姓名</span><br><span class="line">     * 14	企业证件号</span><br><span class="line">     * 15	台湾居民来往大陆通行证,港澳同胞回乡证</span><br><span class="line">     * 16	校验军官证</span><br><span class="line">     * 17	校验出生证明</span><br><span class="line">     * 18	校验港澳台居民居住证</span><br><span class="line">     * @return  boolean 正确返回 true 否则 false</span><br><span class="line">     */</span><br><span class="line">    public static boolean vailStringByType(int authType,String value)&#123;</span><br><span class="line">    	</span><br><span class="line">    	switch(authType)&#123;</span><br><span class="line">    	       // 验证非空</span><br><span class="line">    	       case 0:&#123;</span><br><span class="line">    	    	 if(null==value)&#123;</span><br><span class="line">    	    		 return false;</span><br><span class="line">    	    	 &#125; else&#123;</span><br><span class="line">    	    		 if(&quot;&quot;.equals(value.trim()))&#123;</span><br><span class="line">    	    			 return false;</span><br><span class="line">    	    		 &#125;else&#123;</span><br><span class="line">    	    			 return true;</span><br><span class="line">    	    		 &#125;</span><br><span class="line">    	    	 &#125; </span><br><span class="line">    	       &#125;</span><br><span class="line">    	       // 验证手机号  </span><br><span class="line">    	       case 1:&#123;</span><br><span class="line">    	    	   Pattern p = null;  </span><br><span class="line">    	           Matcher m = null;  </span><br><span class="line">    	           p = Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;mobile&quot;)); // 验证手机号  </span><br><span class="line">    	           m = p.matcher(value);  </span><br><span class="line">    	           boolean b = m.matches();   </span><br><span class="line">    	           return b; </span><br><span class="line">    	       &#125;</span><br><span class="line">    	       //验证固定电话</span><br><span class="line">	     		case 2:&#123; 	</span><br><span class="line">	 	    	     Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;tel&quot;));</span><br><span class="line">	 	   	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	 	   	    	 boolean b = m.matches();   </span><br><span class="line">	 	 	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">    	       // 验证日期</span><br><span class="line">    	       case 3:&#123;</span><br><span class="line">    	    	   value=value.replaceAll(&quot;/&quot;,&quot;&quot;).replaceAll(&quot;-&quot;,&quot;&quot;);</span><br><span class="line">    	    	   if(value!=null&amp;&amp;!&quot;&quot;.equals(value.trim()) &amp;&amp; value.length()==8)&#123;</span><br><span class="line">    					SimpleDateFormat sdf2=new SimpleDateFormat(&quot;yyyyMMdd&quot;);//小写的mm表示的是分钟  </span><br><span class="line">    					try &#123;</span><br><span class="line">    						sdf2.setLenient(false);</span><br><span class="line">    						sdf2.parse(value);</span><br><span class="line">	    					return true;</span><br><span class="line">    					&#125; catch (ParseException e1) &#123;</span><br><span class="line">    						e1.printStackTrace();</span><br><span class="line">    						return false;</span><br><span class="line">    					&#125;</span><br><span class="line">    	    	    &#125;else&#123;</span><br><span class="line">    	    	    	return false;</span><br><span class="line">    	    	    &#125;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       // 验证 邮箱</span><br><span class="line">    	       case 4:&#123;</span><br><span class="line">    	    	   Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;email&quot;));</span><br><span class="line">    	    	   Matcher m = reg.matcher(value);</span><br><span class="line">    	    	   boolean b = m.matches();   </span><br><span class="line">	    	       return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       // 验证 身份证号</span><br><span class="line">    	       case 5:&#123;</span><br><span class="line">    	    	   boolean b = vailIdCardNum(value);</span><br><span class="line">    	    	   return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       // 验证姓名类型</span><br><span class="line">    	       case 6:&#123;</span><br><span class="line">    	    	   Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;name&quot;));</span><br><span class="line">    	    	   Matcher m = reg.matcher(value);</span><br><span class="line">    	    	   boolean b = m.matches();   </span><br><span class="line">	    	       return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       //验证英文名</span><br><span class="line">	     		case 7:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;ename&quot;));</span><br><span class="line">	     	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	     	    	 boolean b = m.matches();   </span><br><span class="line">	   	    	     return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//邮编</span><br><span class="line">	     		case 8:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;postCode&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		// 验证出生日期</span><br><span class="line">    	       case 9:&#123;</span><br><span class="line">    	    	   value=value.replaceAll(&quot;/&quot;,&quot;&quot;).replaceAll(&quot;-&quot;,&quot;&quot;);</span><br><span class="line">    	    	   if(value!=null&amp;&amp;!&quot;&quot;.equals(value.trim()) &amp;&amp; value.length()==8)&#123;</span><br><span class="line">    					SimpleDateFormat sdf2=new SimpleDateFormat(&quot;yyyyMMdd&quot;);//小写的mm表示的是分钟  </span><br><span class="line">    					SimpleDateFormat sdf=new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);//小写的mm表示的是分钟  </span><br><span class="line">    					try &#123;</span><br><span class="line">    						sdf2.setLenient(false);</span><br><span class="line">    						sdf2.parse(value);</span><br><span class="line">    						String strYear = value.substring(0, 4);// 年份     </span><br><span class="line">	    				    String strMonth = value.substring(4, 6);// 月份     </span><br><span class="line">	    				    String strDay = value.substring(6, 8);// 月份     </span><br><span class="line">	    				    if (isDataFormat(strYear + &quot;-&quot; + strMonth + &quot;-&quot; + strDay) == false) &#123;     </span><br><span class="line">	    				         return false;     </span><br><span class="line">	    				     &#125;     </span><br><span class="line">	    				     GregorianCalendar gc = new GregorianCalendar();     </span><br><span class="line">	    				     </span><br><span class="line">	    					 if ((gc.get(Calendar.YEAR) - Integer.parseInt(strYear)) &gt; 200    </span><br><span class="line">	    					         || (gc.getTime().getTime() - sdf.parse( strYear + &quot;-&quot; + strMonth + &quot;-&quot; + strDay).getTime()) &lt; 0) &#123;     </span><br><span class="line">	    					     return false;     </span><br><span class="line">	    					 &#125;</span><br><span class="line">	    					 </span><br><span class="line">	    				     if (Integer.parseInt(strMonth) &gt; 12 || Integer.parseInt(strMonth) == 0) &#123;     </span><br><span class="line">	    				         return false;     </span><br><span class="line">	    				     &#125;     </span><br><span class="line">	    				     if (Integer.parseInt(strDay) &gt; 31 || Integer.parseInt(strDay) == 0) &#123;     </span><br><span class="line">	    				         return false;     </span><br><span class="line">	    				     &#125;     </span><br><span class="line">	    				     // =====================(end)=====================     </span><br><span class="line">	    					return true;</span><br><span class="line">    					&#125; catch (ParseException e1) &#123;</span><br><span class="line">    						e1.printStackTrace();</span><br><span class="line">    						return false;</span><br><span class="line">    					&#125;</span><br><span class="line">    	    	    &#125;else&#123;</span><br><span class="line">    	    	    	return false;</span><br><span class="line">    	    	    &#125;</span><br><span class="line">	    	    &#125;</span><br><span class="line">    	       // 验证 数字</span><br><span class="line">    	       case 10:&#123;</span><br><span class="line">    	    	   Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;num&quot;));</span><br><span class="line">    	    	   Matcher m = reg.matcher(value);</span><br><span class="line">    	    	   boolean b = m.matches();   </span><br><span class="line">	    	       return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       //小数点后两位的数字</span><br><span class="line">    	       case 11:&#123;</span><br><span class="line">    	    	   Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;floatCheck&quot;));</span><br><span class="line">    	    	   Matcher m = reg.matcher(value);</span><br><span class="line">    	    	   boolean b = m.matches();   </span><br><span class="line">    	    	   return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       // 验证 护照</span><br><span class="line">    	       case 12:&#123;</span><br><span class="line">    	    	   boolean b = checkPassportNumber(value);   </span><br><span class="line">	    	       return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">	     		//企业姓名</span><br><span class="line">	     		case 13:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;firmName&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//企业证件号</span><br><span class="line">	     		case 14:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;idCardNumber&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//台湾居民来往大陆通行证,港澳同胞回乡证</span><br><span class="line">	     		case 15:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;chinaOtherCard&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//校验军官证</span><br><span class="line">	     		case 16:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;officerNumber&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//校验出生证明</span><br><span class="line">	     		case 17:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;birthCard&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//校验港澳台居民居住证</span><br><span class="line">	     		case 18:&#123;</span><br><span class="line">	     			 Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;gatNumber&quot;));</span><br><span class="line">	      	    	 Matcher m = reg.matcher(value);</span><br><span class="line">	      	    	 boolean b = m.matches();   </span><br><span class="line">	      	    	 return b;</span><br><span class="line">	     		&#125;</span><br><span class="line">	     		//小数点后两位的数字</span><br><span class="line">    	       case 19:&#123;</span><br><span class="line">    	    	   Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;salryCheck&quot;));</span><br><span class="line">    	    	   Matcher m = reg.matcher(value);</span><br><span class="line">    	    	   boolean b = m.matches();   </span><br><span class="line">	    	       return b;</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       default:&#123;</span><br><span class="line">                  return false;</span><br><span class="line">               &#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 验证身份证号</span><br><span class="line">     * @param IDStr</span><br><span class="line">     * @return</span><br><span class="line">     * @throws NumberFormatException</span><br><span class="line">     * @throws ParseException</span><br><span class="line">     */</span><br><span class="line">    public static boolean vailIdCardNum(String IDStr)&#123;</span><br><span class="line">    	 try &#123;</span><br><span class="line">			 if(IDStr==null)&#123;</span><br><span class="line">				 return false;</span><br><span class="line">			 &#125;else&#123;</span><br><span class="line">				 IDStr = IDStr.toLowerCase();</span><br><span class="line">			 &#125;</span><br><span class="line">		     String[] ValCodeArr = &#123; &quot;1&quot;, &quot;0&quot;, &quot;x&quot;, &quot;9&quot;, &quot;8&quot;, &quot;7&quot;, &quot;6&quot;, &quot;5&quot;, &quot;4&quot;,     </span><br><span class="line">		             &quot;3&quot;, &quot;2&quot; &#125;;     </span><br><span class="line">		     String[] Wi = &#123; &quot;7&quot;, &quot;9&quot;, &quot;10&quot;, &quot;5&quot;, &quot;8&quot;, &quot;4&quot;, &quot;2&quot;, &quot;1&quot;, &quot;6&quot;, &quot;3&quot;, &quot;7&quot;,     </span><br><span class="line">		             &quot;9&quot;, &quot;10&quot;, &quot;5&quot;, &quot;8&quot;, &quot;4&quot;, &quot;2&quot; &#125;;     </span><br><span class="line">		     String Ai = &quot;&quot;;</span><br><span class="line">		     // ================ 号码的长度 15位或18位 ================     </span><br><span class="line">		     if (IDStr.length() != 15 &amp;&amp; IDStr.length() != 18) &#123;     </span><br><span class="line">		         return false;     </span><br><span class="line">		     &#125;     </span><br><span class="line">		 </span><br><span class="line">		     // ================ 数字 除最后以为都为数字 ================     </span><br><span class="line">		     if (IDStr.length() == 18) &#123;     </span><br><span class="line">		         Ai = IDStr.substring(0, 17);     </span><br><span class="line">		     &#125; else if (IDStr.length() == 15) &#123;     </span><br><span class="line">		         Ai = IDStr.substring(0, 6) + &quot;19&quot; + IDStr.substring(6, 15);     </span><br><span class="line">		     &#125;     </span><br><span class="line">		     if (vailStringByType(8,Ai) == false) &#123; </span><br><span class="line">		    	 return false;    </span><br><span class="line">		     &#125;     </span><br><span class="line">		     // =======================(end)========================     </span><br><span class="line">		 </span><br><span class="line">		     // ================ 出生年月是否有效 ================     </span><br><span class="line">		     String strYear = Ai.substring(6, 10);// 年份     </span><br><span class="line">		     String strMonth = Ai.substring(10, 12);// 月份     </span><br><span class="line">		     String strDay = Ai.substring(12, 14);// 月份     </span><br><span class="line">		     if (isDataFormat(strYear + &quot;-&quot; + strMonth + &quot;-&quot; + strDay) == false) &#123;     </span><br><span class="line">		         return false;     </span><br><span class="line">		     &#125;     </span><br><span class="line">		     GregorianCalendar gc = new GregorianCalendar();     </span><br><span class="line">		     SimpleDateFormat s = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);     </span><br><span class="line">		     </span><br><span class="line">			 if ((gc.get(Calendar.YEAR) - Integer.parseInt(strYear)) &gt; 200    </span><br><span class="line">			         || (gc.getTime().getTime() - s.parse( strYear + &quot;-&quot; + strMonth + &quot;-&quot; + strDay).getTime()) &lt; 0) &#123;     </span><br><span class="line">			     return false;     </span><br><span class="line">			 &#125;</span><br><span class="line">			 </span><br><span class="line">		     if (Integer.parseInt(strMonth) &gt; 12 || Integer.parseInt(strMonth) == 0) &#123;     </span><br><span class="line">		         return false;     </span><br><span class="line">		     &#125;     </span><br><span class="line">		     if (Integer.parseInt(strDay) &gt; 31 || Integer.parseInt(strDay) == 0) &#123;     </span><br><span class="line">		         return false;     </span><br><span class="line">		     &#125;     </span><br><span class="line">		     // =====================(end)=====================     </span><br><span class="line">		 </span><br><span class="line">		     // ================ 地区码时候有效 ================     </span><br><span class="line">		     Hashtable&lt;String, String&gt; h = GetAreaCode();     </span><br><span class="line">		     if (h.get(Ai.substring(0, 2)) == null) &#123;     </span><br><span class="line">		         return false;     </span><br><span class="line">		     &#125;     </span><br><span class="line">		     // ==============================================     </span><br><span class="line">		 </span><br><span class="line">		     // ================ 判断最后一位的值 ================     </span><br><span class="line">		     int TotalmulAiWi = 0;     </span><br><span class="line">		     for (int i = 0; i &lt; 17; i++) &#123;     </span><br><span class="line">		         TotalmulAiWi = TotalmulAiWi     </span><br><span class="line">		                 + Integer.parseInt(String.valueOf(Ai.charAt(i)))     </span><br><span class="line">		                 * Integer.parseInt(Wi[i]);     </span><br><span class="line">		     &#125;     </span><br><span class="line">		     int modValue = TotalmulAiWi % 11;     </span><br><span class="line">		     String strVerifyCode = ValCodeArr[modValue];     </span><br><span class="line">		     Ai = Ai + strVerifyCode;     </span><br><span class="line">		 </span><br><span class="line">		     if (IDStr.length() == 18) &#123;   </span><br><span class="line">		          if (!Ai.equals(IDStr)) &#123;     </span><br><span class="line">		              return false;     </span><br><span class="line">		          &#125;     </span><br><span class="line">		      &#125; else &#123;     </span><br><span class="line">		          return true;     </span><br><span class="line">		      &#125;     </span><br><span class="line">		      // =====================(end)=====================     </span><br><span class="line">		      return  true;   </span><br><span class="line">		      </span><br><span class="line">         &#125; catch (NumberFormatException e) &#123;</span><br><span class="line"> 			// TODO Auto-generated catch block</span><br><span class="line"> 			e.printStackTrace();</span><br><span class="line"> 		 &#125; catch (ParseException e) &#123;</span><br><span class="line"> 			// TODO Auto-generated catch block</span><br><span class="line"> 			e.printStackTrace();</span><br><span class="line"> 		 &#125;</span><br><span class="line">		return false;</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    /**   </span><br><span class="line">     * 	功能：设置地区编码   </span><br><span class="line">     * @return Hashtable 对象   </span><br><span class="line">     */    </span><br><span class="line">    private static Hashtable&lt;String, String&gt; GetAreaCode() &#123;     </span><br><span class="line">        Hashtable&lt;String, String&gt; hashtable = new Hashtable&lt;String, String&gt;();     </span><br><span class="line">        hashtable.put(&quot;11&quot;, &quot;北京&quot;);     </span><br><span class="line">        hashtable.put(&quot;12&quot;, &quot;天津&quot;);     </span><br><span class="line">        hashtable.put(&quot;13&quot;, &quot;河北&quot;);     </span><br><span class="line">        hashtable.put(&quot;14&quot;, &quot;山西&quot;);     </span><br><span class="line">        hashtable.put(&quot;15&quot;, &quot;内蒙古&quot;);     </span><br><span class="line">        hashtable.put(&quot;21&quot;, &quot;辽宁&quot;);     </span><br><span class="line">        hashtable.put(&quot;22&quot;, &quot;吉林&quot;);     </span><br><span class="line">        hashtable.put(&quot;23&quot;, &quot;黑龙江&quot;);     </span><br><span class="line">        hashtable.put(&quot;31&quot;, &quot;上海&quot;);     </span><br><span class="line">        hashtable.put(&quot;32&quot;, &quot;江苏&quot;);     </span><br><span class="line">        hashtable.put(&quot;33&quot;, &quot;浙江&quot;);     </span><br><span class="line">        hashtable.put(&quot;34&quot;, &quot;安徽&quot;);     </span><br><span class="line">        hashtable.put(&quot;35&quot;, &quot;福建&quot;);     </span><br><span class="line">        hashtable.put(&quot;36&quot;, &quot;江西&quot;);     </span><br><span class="line">        hashtable.put(&quot;37&quot;, &quot;山东&quot;);     </span><br><span class="line">        hashtable.put(&quot;41&quot;, &quot;河南&quot;);     </span><br><span class="line">        hashtable.put(&quot;42&quot;, &quot;湖北&quot;);     </span><br><span class="line">        hashtable.put(&quot;43&quot;, &quot;湖南&quot;);     </span><br><span class="line">        hashtable.put(&quot;44&quot;, &quot;广东&quot;);     </span><br><span class="line">        hashtable.put(&quot;45&quot;, &quot;广西&quot;);     </span><br><span class="line">        hashtable.put(&quot;46&quot;, &quot;海南&quot;);     </span><br><span class="line">        hashtable.put(&quot;50&quot;, &quot;重庆&quot;);     </span><br><span class="line">        hashtable.put(&quot;51&quot;, &quot;四川&quot;);     </span><br><span class="line">        hashtable.put(&quot;52&quot;, &quot;贵州&quot;);     </span><br><span class="line">        hashtable.put(&quot;53&quot;, &quot;云南&quot;);     </span><br><span class="line">        hashtable.put(&quot;54&quot;, &quot;西藏&quot;);     </span><br><span class="line">        hashtable.put(&quot;61&quot;, &quot;陕西&quot;);     </span><br><span class="line">        hashtable.put(&quot;62&quot;, &quot;甘肃&quot;);     </span><br><span class="line">        hashtable.put(&quot;63&quot;, &quot;青海&quot;);     </span><br><span class="line">        hashtable.put(&quot;64&quot;, &quot;宁夏&quot;);     </span><br><span class="line">        hashtable.put(&quot;65&quot;, &quot;新疆&quot;);     </span><br><span class="line">        hashtable.put(&quot;71&quot;, &quot;台湾&quot;);     </span><br><span class="line">        hashtable.put(&quot;81&quot;, &quot;香港&quot;);     </span><br><span class="line">        hashtable.put(&quot;82&quot;, &quot;澳门&quot;);     </span><br><span class="line">        hashtable.put(&quot;91&quot;, &quot;国外&quot;);     </span><br><span class="line">        return hashtable;     </span><br><span class="line">    &#125; </span><br><span class="line">    /**</span><br><span class="line">	 * @desc 校验护照</span><br><span class="line">	 * @param value</span><br><span class="line">	 * @return boolean</span><br><span class="line">	 */</span><br><span class="line">	private static boolean checkPassportNumber(String value) &#123;</span><br><span class="line">		Pattern reg= Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;passportNumber&quot;));</span><br><span class="line">		Matcher m = reg.matcher(value);</span><br><span class="line">		boolean b = m.matches();</span><br><span class="line">		return b;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    /**验证日期字符串是否是YYYY-MM-DD格式 </span><br><span class="line">     * @param str </span><br><span class="line">     * @return </span><br><span class="line">     */  </span><br><span class="line">	private static boolean isDataFormat(String str)&#123;  </span><br><span class="line">	   boolean flag=false;</span><br><span class="line">	   String regxStr=ValidationPropertiesUtil.getProperty(&quot;dateFormat&quot;);  </span><br><span class="line">	   Pattern pattern1=Pattern.compile(regxStr);  </span><br><span class="line">	   Matcher isNo=pattern1.matcher(str);  </span><br><span class="line">	   if(isNo.matches())&#123;  </span><br><span class="line">		   flag=true;  </span><br><span class="line">	   &#125;  </span><br><span class="line">	   return flag;  </span><br><span class="line">	&#125;  </span><br><span class="line">	</span><br><span class="line">	//验证出生日期是否在当前日期之前</span><br><span class="line">	public static boolean validationBirthDate(Date birthDate)&#123;</span><br><span class="line">		Date date =new Date();</span><br><span class="line">		int number=date.compareTo(birthDate);</span><br><span class="line">		if(number&gt;0)&#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * </span><br><span class="line">	 * @param str 字符串</span><br><span class="line">	 * @param flag 1 过滤全部字符串  、 2 过滤收尾字符串 </span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public static String trim(String str,Integer flag)&#123;</span><br><span class="line">		if(flag == 1)&#123;</span><br><span class="line">			return str.replaceAll(&quot; &quot;, &quot;&quot;);</span><br><span class="line">		&#125;else if(flag == 2)&#123;</span><br><span class="line">			return str.trim();</span><br><span class="line">		&#125;</span><br><span class="line">		return str;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">     * 	判断字符串中是否包含中文</span><br><span class="line">     * @param str</span><br><span class="line">     * 	待校验字符串</span><br><span class="line">     * @return 是否为中文</span><br><span class="line">     * @warn 不能校验是否为中文标点符号</span><br><span class="line">     */</span><br><span class="line">    public static boolean isContainChinese(String str) &#123;</span><br><span class="line">        Pattern p = Pattern.compile(ValidationPropertiesUtil.getProperty(&quot;is_chinese&quot;));</span><br><span class="line">        Matcher m = p.matcher(str);</span><br><span class="line">        if (m.find()) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /**</span><br><span class="line">     * 	过滤后空格的字符串</span><br><span class="line">     * @param str</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static String getAfterTrimStr(String str)&#123;</span><br><span class="line">    	if(str!=null&amp;&amp;!&quot;&quot;.equals(str))&#123;</span><br><span class="line">        	if(isContainChinese(str))&#123;</span><br><span class="line">        		return trim(str,1);</span><br><span class="line">        	&#125;else&#123;</span><br><span class="line">        		return trim(str,2);</span><br><span class="line">        	&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">		return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     *	 身份证号的特殊字符转化</span><br><span class="line">     * @param str</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static String getIdCardNumberStr(String str)&#123;</span><br><span class="line">    	if(str!=null&amp;&amp;!&quot;&quot;.equals(str))&#123;</span><br><span class="line">    		return str.toUpperCase().replace(&quot;×&quot;, &quot;X&quot;).replace(&quot;x&quot;, &quot;X&quot;);</span><br><span class="line">    		</span><br><span class="line">    	&#125;</span><br><span class="line">		return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 	证件有效期判断转换</span><br><span class="line">     */</span><br><span class="line">    public static String cardDate(String idStartDate , String idEndDate,String isLongterm)&#123;</span><br><span class="line">    	String cardDateString=&quot;&quot;;</span><br><span class="line">    	if(idStartDate==&quot;&quot; || idStartDate==null)&#123;</span><br><span class="line">    		return cardDateString;</span><br><span class="line">    	&#125;</span><br><span class="line">    	if(&quot;1&quot;.equals(isLongterm) || &quot;&quot;.equals(idEndDate) || idEndDate == null) &#123;</span><br><span class="line">    		cardDateString = idStartDate + &quot;-&quot; +&quot;长期&quot;; </span><br><span class="line">    	&#125;else &#123;</span><br><span class="line">    		cardDateString = idStartDate + &quot;-&quot; + idEndDate;</span><br><span class="line">    	&#125;</span><br><span class="line">    	return cardDateString;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ValidationPropertiesUtil-java"><a href="#ValidationPropertiesUtil-java" class="headerlink" title="ValidationPropertiesUtil.java"></a>ValidationPropertiesUtil.java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package com.common.utils.register;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.Properties;</span><br><span class="line">/**</span><br><span class="line"> * @author wangming</span><br><span class="line"> * @version</span><br><span class="line"> * 	读取获取配置文件相关信息</span><br><span class="line"> * */</span><br><span class="line">public class ValidationPropertiesUtil &#123;</span><br><span class="line">	private static Properties  p = System.getProperties();</span><br><span class="line">	private static ValidationPropertiesUtil propertiesUtil = null;</span><br><span class="line">	private ValidationPropertiesUtil()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			p.load(ValidationPropertiesUtil.class.getResourceAsStream(&quot;validation.properties&quot;));</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static String getProperty(String key)&#123;</span><br><span class="line">		if(propertiesUtil == null)&#123;</span><br><span class="line">			propertiesUtil = new ValidationPropertiesUtil();</span><br><span class="line">		&#125;</span><br><span class="line">		return p.getProperty(key);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void clear()&#123;</span><br><span class="line">		p.clear();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="validation-properties"><a href="#validation-properties" class="headerlink" title="validation.properties"></a>validation.properties</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#手机号码校验规则</span><br><span class="line">mobile = ^(13|14|15|17|18|19|16)[0-9]&#123;9&#125;$</span><br><span class="line">#验证固定电话</span><br><span class="line">tel = ^(0[1-9][0-9])-\d&#123;8&#125;$|^(0[1-9]&#123;3&#125;-(\d&#123;7,8&#125;))$</span><br><span class="line">#邮件检验</span><br><span class="line">email = ^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\\.([a-zA-Z0-9_-])+)+$</span><br><span class="line">#姓名</span><br><span class="line">name = ^[\u0391-\uffe5]&#123;2,20&#125;$|^[a-zA-Z\\s]&#123;2,20&#125;$</span><br><span class="line">#name = ^[\\u4e00-\\u9fa5]&#123;1&#125;[\\u4e00-\\u9fa5\.·。]&#123;0,20&#125;[\\u4e00-\\u9fa5]&#123;1&#125;$)|([a-zA-Z]&#123;1&#125;[a-zA-Z\\-]&#123;0,20&#125;[a-zA-Z]&#123;1&#125;$</span><br><span class="line">#英文姓名</span><br><span class="line">ename:^[a-zA-Z \s]&#123;2,20&#125;$</span><br><span class="line">#邮编</span><br><span class="line">postCode=^[0-9]\\d&#123;5&#125;$</span><br><span class="line">#数字</span><br><span class="line">num = ^[0-9]*$</span><br><span class="line">#小数点后两位数字</span><br><span class="line">floatCheck = ^[0-9]+(.[0-9]&#123;1,2&#125;)?$</span><br><span class="line">salryCheck = \\d\\.\\d*|[1-9]\\d*|\\d*\\.\\d*|\\d</span><br><span class="line">#校验护照</span><br><span class="line">passportNumber = ^[a-zA-Z0-9]&#123;3,16&#125;$</span><br><span class="line">#企业姓名</span><br><span class="line">firmName=^([A-Za-z]|[\u4E00-\u9FA5]|\\\\uFF08|\\\\uFF09)&#123;2,30&#125;$</span><br><span class="line">#企业证件号</span><br><span class="line">idCardNumber=^[0-9a-zA-Z]+$</span><br><span class="line">#台湾居民来往大陆通行证,港澳同胞回乡证</span><br><span class="line">chinaOtherCard=^[\\\d\\\D]&#123;8,18&#125;$</span><br><span class="line">#校验军官证</span><br><span class="line">officerNumber=^[a-zA-Z0-9-\u4e00-\u9fa5]&#123;10,18&#125;$</span><br><span class="line">#校验出生证明</span><br><span class="line">birthCard=^[0-9a-zA-Z]&#123;1,18&#125;$</span><br><span class="line">#校验港澳台居民居住证</span><br><span class="line">gatNumber=^(810000|820000|830000)[A-Z0-9]&#123;12&#125;$</span><br></pre></td></tr></table></figure>
+<h3 id="Test-java"><a href="#Test-java" class="headerlink" title="Test.java"></a>Test.java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package com.common.utils.register;</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(FieldValidationUtil.vailStringByType(6, &quot;哈哈哈&quot;));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+	
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="/js/src/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>java字段校验工具类</p>
+  <p><span>文章作者:</span>wangming</p>
+  <p><span>发布时间:</span>2019年01月21日 - 23:49:05</p>
+  <p><span>最后更新:</span>2019年01月22日 - 00:03:23</p>
+  <p><span>原始链接:</span><a href="/2019/01/21/java字段校验工具类/" title="java字段校验工具类">https://syxiaowanzi.github.io/2019/01/21/java字段校验工具类/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syxiaowanzi.github.io/2019/01/21/java字段校验工具类/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<!--
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));
+     
+</script>
+--> 
+
+      
+	</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java字段校验/" rel="tag"><i class="fa fa-tag"></i> java字段校验</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+              </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/21/java生成随机数工具类/" rel="next" title="java生成随机数工具类">
+                <i class="fa fa-chevron-left"></i> java生成随机数工具类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/22/java发送邮件/" rel="prev" title="java发送邮件">
+                java发送邮件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="wangming">
+            
+              <p class="site-author-name" itemprop="name">wangming</p>
+              <p class="site-description motion-element" itemprop="description">自己选择的路，跪着也要走完。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/syxiaowanzi" title="GitHub &rarr; https://github.com/syxiaowanzi" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:himingwang@126.com" title="E-Mail &rarr; mailto:himingwang@126.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/u/5306257601" title="Weibo &rarr; https://weibo.com/u/5306257601" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/syxiaowanzi" title="Twitter &rarr; https://twitter.com/syxiaowanzi" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.steshine.cn" title="https://www.steshine.cn" rel="noopener" target="_blank">steshine个人博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://snailgary.org" title="https://snailgary.org" rel="noopener" target="_blank">snailgary个人博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FieldValidationUtil-java"><span class="nav-number">2.1.</span> <span class="nav-text">FieldValidationUtil.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ValidationPropertiesUtil-java"><span class="nav-number">2.2.</span> <span class="nav-text">ValidationPropertiesUtil.java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#validation-properties"><span class="nav-number">2.3.</span> <span class="nav-text">validation.properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Test-java"><span class="nav-number">2.4.</span> <span class="nav-text">Test.java</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangming</span>
+	
+  
+	
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '7n67a4aO8GVIClyqcyKNFkqY-gzGzoHsz',
+    appKey: 'hKN7RF5oqEzOVNmEOMBJNwgX',
+    placeholder: '说点什么...',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

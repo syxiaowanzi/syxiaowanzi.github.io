@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-21T10:36:24.049Z</updated>
+  <updated>2019-01-21T18:07:59.742Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -17,16 +17,186 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>java发送邮件</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/22/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/22/java发送邮件/</id>
+    <published>2019-01-21T17:36:27.000Z</published>
+    <updated>2019-01-21T18:07:59.742Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;jdk1.8&lt;br&gt;activation.jar&lt;br&gt;javax.mail-1.6.2.jar&lt;br&gt;log4j-1.2.12.jar&lt;b
+      
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java发送邮件" scheme="https://syxiaowanzi.github.io/tags/java%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java字段校验工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E5%AD%97%E6%AE%B5%E6%A0%A1%E9%AA%8C%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java字段校验工具类/</id>
+    <published>2019-01-21T15:49:05.000Z</published>
+    <updated>2019-01-21T16:03:23.699Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;判断传入的字符串 是否符合特定的格式（非空 、手机号、验证固定电话、日期、邮箱、身份证号、姓名、验证英文名、邮编、验证出生日期、数字、小数点后两位的数字 、护照、企业姓名、企业证件号、台湾居民来往大陆通行证,港澳同胞回乡证、校验军官证、校验出生证明、校验港澳台居民居住证）&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;&lt;h3 id=&quot;FieldValidationUtil-java&quot;&gt;&lt;a href=&quot;#FieldValidationUtil-java&quot; class=&quot;headerlink&quot; title=&quot;FieldValidationUtil.java&quot;&gt;&lt;/a&gt;FieldValidationUtil.java&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java字段校验" scheme="https://syxiaowanzi.github.io/tags/java%E5%AD%97%E6%AE%B5%E6%A0%A1%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java生成随机数工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java生成随机数工具类/</id>
+    <published>2019-01-21T15:48:45.000Z</published>
+    <updated>2019-01-21T15:54:15.852Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;生成制定范围内的随机数、返回固定长度的数字、返回一个定长的随机字符串(只包含大小写字母、数字)、返回一个定长的随机纯字母字符串(只包含大小写字母)、返回一个定长的随机纯大写字母字符串(只包含大小写字母)、返回一个UUID等等。&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java生成随机数" scheme="https://syxiaowanzi.github.io/tags/java%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xml相关的工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/xml%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/xml相关的工具类/</id>
+    <published>2019-01-21T15:27:38.000Z</published>
+    <updated>2019-01-21T15:32:27.095Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;读取xml数据返回string数据&lt;br&gt;xml与map的相互转换&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;&lt;h3 id=&quot;读取xml转换成string&quot;&gt;&lt;a href=&quot;#读取xml转换成string&quot; class=&quot;headerlink&quot; title=&quot;读取xml转换成string&quot;&gt;&lt;/a&gt;读取xml转换成string&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="读取xml转换成string map转换成xml xml转换成map" scheme="https://syxiaowanzi.github.io/tags/%E8%AF%BB%E5%8F%96xml%E8%BD%AC%E6%8D%A2%E6%88%90string-map%E8%BD%AC%E6%8D%A2%E6%88%90xml-xml%E8%BD%AC%E6%8D%A2%E6%88%90map/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java字符串工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java字符串工具类/</id>
+    <published>2019-01-21T15:08:19.000Z</published>
+    <updated>2019-01-21T15:11:28.230Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;为空或者null、不为空、String转换成int、String转换成long、切分string成数组&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java字符串工具类 java字符串转换" scheme="https://syxiaowanzi.github.io/tags/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B7%A5%E5%85%B7%E7%B1%BB-java%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java数学工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java数学工具类/</id>
+    <published>2019-01-21T15:03:46.000Z</published>
+    <updated>2019-01-21T15:09:12.074Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h2&gt;&lt;p&gt;加减乘除四舍五入&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java数学工具类" scheme="https://syxiaowanzi.github.io/tags/java%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java加密工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E5%8A%A0%E5%AF%86%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java加密工具类/</id>
+    <published>2019-01-21T13:36:54.000Z</published>
+    <updated>2019-01-21T14:34:10.600Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;java加密工具类&quot;&gt;&lt;a href=&quot;#java加密工具类&quot; class=&quot;headerlink&quot; title=&quot;java加密工具类&quot;&gt;&lt;/a&gt;java加密工具类&lt;/h2&gt;&lt;p&gt;包含AES、DES、Base32、Base64&lt;/p&gt;
+&lt;h2 id=&quot;AES代码&quot;&gt;&lt;a href=&quot;#AES代码&quot; class=&quot;headerlink&quot; title=&quot;AES代码&quot;&gt;&lt;/a&gt;AES代码&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java加密 AES DES Base32 Base64" scheme="https://syxiaowanzi.github.io/tags/java%E5%8A%A0%E5%AF%86-AES-DES-Base32-Base64/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java时间工具类</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/21/java%E6%97%B6%E9%97%B4%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/21/java时间工具类/</id>
+    <published>2019-01-21T13:36:17.000Z</published>
+    <updated>2019-01-21T13:41:32.680Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;java时间工具类&quot;&gt;&lt;a href=&quot;#java时间工具类&quot; class=&quot;headerlink&quot; title=&quot;java时间工具类&quot;&gt;&lt;/a&gt;java时间工具类&lt;/h2&gt;&lt;p&gt;工具中提供获取当前年、月、日、String类型时间、Long当前毫秒数、日期格式化、根据string类型时间获取Long时间、根据Long类型时间获取当前String时间、获得当天某个时间的毫秒数等。&lt;/p&gt;
+&lt;h2 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://syxiaowanzi.github.io/categories/Tools/"/>
+    
+    
+      <category term="java时间处理" scheme="https://syxiaowanzi.github.io/tags/java%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java多线程</title>
     <link href="https://syxiaowanzi.github.io/2019/01/21/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>https://syxiaowanzi.github.io/2019/01/21/java多线程/</id>
     <published>2019-01-21T09:59:01.000Z</published>
-    <updated>2019-01-21T10:36:24.049Z</updated>
+    <updated>2019-01-21T11:10:15.406Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;java多线程&quot;&gt;&lt;a href=&quot;#java多线程&quot; class=&quot;headerlink&quot; title=&quot;java多线程&quot;&gt;&lt;/a&gt;java多线程&lt;/h2&gt;&lt;p&gt;Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。&lt;/p&gt;
-&lt;h2 id=&quot;线程生命周期&quot;&gt;&lt;a href=&quot;#线程生命周期&quot; class=&quot;headerlink&quot; title=&quot;线程生命周期&quot;&gt;&lt;/a&gt;线程生命周期&lt;/h2&gt;&lt;p&gt;1.新建状态（New）：新创建了一个线程对象。&lt;br&gt;2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。&lt;br&gt;3.运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。&lt;br&gt;4.阻塞状态（Blocked）阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：&lt;br&gt;
+&lt;h2 id=&quot;线程生命周期&quot;&gt;&lt;a href=&quot;#线程生命周期&quot; class=&quot;headerlink&quot; title=&quot;线程生命周期&quot;&gt;&lt;/a&gt;线程生命周期&lt;/h2&gt;&lt;p&gt;1.新建状态（New）：新创建了一个线程对象。&lt;br&gt;2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。&lt;br&gt;3.运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。&lt;br&gt;4.阻塞状态（Blocked）：阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：&lt;br&gt;
     
     </summary>
     

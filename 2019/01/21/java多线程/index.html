@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="林中木屋">
 <meta property="og:description" content="java多线程Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。 线程生命周期1.新建状态（New）：新创建了一个线程对象。2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。3.运行状态（Runnin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-21T10:36:24.049Z">
+<meta property="og:updated_time" content="2019-01-21T11:10:15.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java多线程">
 <meta name="twitter:description" content="java多线程Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。 线程生命周期1.新建状态（New）：新创建了一个线程对象。2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。3.运行状态（Runnin">
@@ -417,7 +417,7 @@
                 
               
 
-              <time title="创建时间：2019-01-21 17:59:01 / 修改时间：18:36:24" itemprop="dateCreated datePublished" datetime="2019-01-21T17:59:01+08:00">2019-01-21</time>
+              <time title="创建时间：2019-01-21 17:59:01 / 修改时间：19:10:15" itemprop="dateCreated datePublished" datetime="2019-01-21T17:59:01+08:00">2019-01-21</time>
             
 
             
@@ -494,7 +494,7 @@
 
       
         <h2 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h2><p>Java 给多线程编程提供了内置的支持。 一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。</p>
-<h2 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h2><p>1.新建状态（New）：新创建了一个线程对象。<br>2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。<br>3.运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。<br>4.阻塞状态（Blocked）阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br><a id="more"></a><br>4.1 等待阻塞：运行的线程执行wait()方法，JVM会把该线程放入等待池中。<br>4.2 同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池中。<br>4.3 其他阻塞：运行的线程执行sleep()或join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。<br>5.死亡状态（Dead）：线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</p>
+<h2 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h2><p>1.新建状态（New）：新创建了一个线程对象。<br>2.就绪状态（Runnable）：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。<br>3.运行状态（Running）：就绪状态的线程获取了CPU，执行程序代码。<br>4.阻塞状态（Blocked）：阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。阻塞的情况分三种：<br><a id="more"></a><br>4.1 等待阻塞：运行的线程执行wait()方法，JVM会把该线程放入等待池中。<br>4.2 同步阻塞：运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池中。<br>4.3 其他阻塞：运行的线程执行sleep()或join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入就绪状态。<br>5.死亡状态（Dead）：线程执行完了或者因异常退出了run()方法，该线程结束生命周期。</p>
 <h2 id="线程的优先级"><a href="#线程的优先级" class="headerlink" title="线程的优先级"></a>线程的优先级</h2><p>每一个 Java 线程都有一个优先级，这样有助于操作系统确定线程的调度顺序。<br>Java 线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。<br>具有较高优先级的线程对程序更重要，并且应该在低优先级的线程之前分配处理器资源。但是，线程优先级不能保证线程执行的顺序，而且非常依赖于平台。</p>
 <h2 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h2><h3 id="通过实现-Runnable接口"><a href="#通过实现-Runnable接口" class="headerlink" title="通过实现 Runnable接口"></a>通过实现 Runnable接口</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line">/**</span><br><span class="line"> * 输出ABCABCABCABCABCABCABCABCABCABC</span><br><span class="line"> * @author ming</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">class RunnableDemo implements Runnable&#123;</span><br><span class="line">	private String name;     </span><br><span class="line">    private Object prev;     </span><br><span class="line">    private Object self;     </span><br><span class="line">    </span><br><span class="line">    private RunnableDemo(String name, Object prev, Object self) &#123;     </span><br><span class="line">        this.name = name;     </span><br><span class="line">        this.prev = prev;     </span><br><span class="line">        this.self = self;     </span><br><span class="line">    &#125;     </span><br><span class="line">    </span><br><span class="line">    @Override    </span><br><span class="line">    public void run() &#123;     </span><br><span class="line">        int count = 10;     </span><br><span class="line">        while (count &gt; 0) &#123;     </span><br><span class="line">            synchronized (prev) &#123;     </span><br><span class="line">                synchronized (self) &#123;     </span><br><span class="line">                    System.out.print(name);     </span><br><span class="line">                    count--;    </span><br><span class="line">                      </span><br><span class="line">                    self.notify();     </span><br><span class="line">                &#125;     </span><br><span class="line">                try &#123;     </span><br><span class="line">                    prev.wait();     </span><br><span class="line">                &#125; catch (InterruptedException e) &#123;     </span><br><span class="line">                    e.printStackTrace();     </span><br><span class="line">                &#125;     </span><br><span class="line">            &#125;     </span><br><span class="line">    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args) throws Exception &#123;     </span><br><span class="line">        Object a = new Object();     </span><br><span class="line">        Object b = new Object();     </span><br><span class="line">        Object c = new Object();     </span><br><span class="line">        RunnableDemo pa = new RunnableDemo(&quot;A&quot;, c, a);     </span><br><span class="line">        RunnableDemo pb = new RunnableDemo(&quot;B&quot;, a, b);     </span><br><span class="line">        RunnableDemo pc = new RunnableDemo(&quot;C&quot;, b, c);     </span><br><span class="line">             </span><br><span class="line">        new Thread(pa).start();  </span><br><span class="line">        Thread.sleep(100);   </span><br><span class="line">        new Thread(pb).start();  </span><br><span class="line">        Thread.sleep(100);    </span><br><span class="line">        new Thread(pc).start();     </span><br><span class="line">        Thread.sleep(100);    </span><br><span class="line">     &#125;     </span><br><span class="line">&#125;       </span><br></pre></td></tr></table></figure>
 <h3 id="通过继承-Thread类本身"><a href="#通过继承-Thread类本身" class="headerlink" title="通过继承 Thread类本身"></a>通过继承 Thread类本身</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package com.thread;</span><br><span class="line">class Thread1 extends Thread&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	public Thread1(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125; </span><br><span class="line">	public void run() &#123;</span><br><span class="line">		for(int i=0; i&lt;5; i++) &#123;</span><br><span class="line">			System.out.println(name+i);</span><br><span class="line">			try &#123;</span><br><span class="line">				sleep((int)Math.random()*10);</span><br><span class="line">			&#125;catch(InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class ExtendsTreadDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+&quot;主线程运行开始!&quot;);</span><br><span class="line">		Thread1 thread1 = new Thread1(&quot;A&quot;);</span><br><span class="line">		Thread1 thread2 = new Thread1(&quot;B&quot;);</span><br><span class="line">		thread1.start();</span><br><span class="line">		try &#123;</span><br><span class="line">			thread1.join();</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		thread2.start();</span><br><span class="line">		try &#123;</span><br><span class="line">			thread2.join();</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(Thread.currentThread().getName()+ &quot;主线程运行结束!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -524,7 +524,7 @@
   <p><span>本文标题:</span>java多线程</p>
   <p><span>文章作者:</span>wangming</p>
   <p><span>发布时间:</span>2019年01月21日 - 17:59:01</p>
-  <p><span>最后更新:</span>2019年01月21日 - 18:36:24</p>
+  <p><span>最后更新:</span>2019年01月21日 - 19:10:15</p>
   <p><span>原始链接:</span><a href="/2019/01/21/java多线程/" title="java多线程">https://syxiaowanzi.github.io/2019/01/21/java多线程/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://syxiaowanzi.github.io/2019/01/21/java多线程/" aria-label="复制成功！"></i></span>
   </p>
@@ -640,6 +640,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/01/21/java时间工具类/" rel="prev" title="java时间工具类">
+                java时间工具类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -714,7 +718,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -762,7 +766,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
