@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-22T16:16:03.976Z</updated>
+  <updated>2019-01-27T14:56:21.179Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多线程编程常用术语</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/27/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/27/多线程编程常用术语/</id>
+    <published>2019-01-27T13:40:00.000Z</published>
+    <updated>2019-01-27T14:56:21.179Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;任务（Task）&quot;&gt;&lt;a href=&quot;#任务（Task）&quot; class=&quot;headerlink&quot; title=&quot;任务（Task）&quot;&gt;&lt;/a&gt;任务（Task）&lt;/h2&gt;&lt;p&gt;把线程比作公司员工的话，那么任务就可以被看做员工所要完成的工作内容，任务与线程并非一一对应的，通常一个线程可以用来执行多个任务。任务是一个相对的概念。一个文件可以被看作是一个任务，一个文件中的多个记录可以被看作一个任务，多个文件也可以被看作一个任务。&lt;/p&gt;
+&lt;h2 id=&quot;并发（Concurrent）&quot;&gt;&lt;a href=&quot;#并发（Concurrent）&quot; class=&quot;headerlink&quot; title=&quot;并发（Concurrent）&quot;&gt;&lt;/a&gt;并发（Concurrent）&lt;/h2&gt;&lt;p&gt;表示多个任务在同一时间段内被执行。这些任务并不是顺序执行，而往往是以交替的方式被执行。&lt;/p&gt;
+&lt;h2 id=&quot;并行（Parallel）&quot;&gt;&lt;a href=&quot;#并行（Parallel）&quot; class=&quot;headerlink&quot; title=&quot;并行（Parallel）&quot;&gt;&lt;/a&gt;并行（Parallel）&lt;/h2&gt;&lt;p&gt;表示多个任务在同一时刻被执行。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://syxiaowanzi.github.io/categories/java/"/>
+    
+    
+      <category term="多线程编程常用术语" scheme="https://syxiaowanzi.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>java设计模式</title>
