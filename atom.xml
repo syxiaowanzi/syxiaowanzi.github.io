@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://syxiaowanzi.github.io/"/>
-  <updated>2019-01-27T14:56:21.179Z</updated>
+  <updated>2019-01-28T12:26:59.225Z</updated>
   <id>https://syxiaowanzi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java常用术语简称</title>
+    <link href="https://syxiaowanzi.github.io/2019/01/28/java%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD%E7%AE%80%E7%A7%B0/"/>
+    <id>https://syxiaowanzi.github.io/2019/01/28/java常用术语简称/</id>
+    <published>2019-01-28T10:54:32.000Z</published>
+    <updated>2019-01-28T12:26:59.225Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;java-EE&quot;&gt;&lt;a href=&quot;#java-EE&quot; class=&quot;headerlink&quot; title=&quot;java EE&quot;&gt;&lt;/a&gt;java EE&lt;/h3&gt;&lt;p&gt;Java Platform Enterprise Edition，此版本中主要包括如下技术：EJB 3.0、Java Persistance Architecture (JPA)、Web 服务、JAX-WS。包含J2SE 中的类，并且还包含用于开发企业级应用的类，比如：EJB、servlet、JSP、XML、事务控制。&lt;/p&gt;
+&lt;h3 id=&quot;EJB&quot;&gt;&lt;a href=&quot;#EJB&quot; class=&quot;headerlink&quot; title=&quot;EJB&quot;&gt;&lt;/a&gt;EJB&lt;/h3&gt;&lt;p&gt;企业级JavaBean（Enterprise Beans），定义了一组可重用的组件：Enterprise Beans。开发人员可以利用这些组件，像搭积木一样建立分布式应用。&lt;/p&gt;
+&lt;h3 id=&quot;SDK&quot;&gt;&lt;a href=&quot;#SDK&quot; class=&quot;headerlink&quot; title=&quot;SDK&quot;&gt;&lt;/a&gt;SDK&lt;/h3&gt;&lt;p&gt;软件开发工具包 （Software Development Kit），最熟悉的就是JDK。&lt;/p&gt;
+&lt;h3 id=&quot;IDE&quot;&gt;&lt;a href=&quot;#IDE&quot; class=&quot;headerlink&quot; title=&quot;IDE&quot;&gt;&lt;/a&gt;IDE&lt;/h3&gt;&lt;p&gt;集成开发环境（ Itegrity Development Environmental）， 比如eclipse、ideal。&lt;/p&gt;
+&lt;h3 id=&quot;JDK&quot;&gt;&lt;a href=&quot;#JDK&quot; class=&quot;headerlink&quot; title=&quot;JDK&quot;&gt;&lt;/a&gt;JDK&lt;/h3&gt;&lt;p&gt;Java软件开发工具包 （Java Development Kit）包含了Java的运行环境（JRE）和Java工具（javac/java/jdb等）和Java基础的类库（即Java API 包括rt.jar）。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://syxiaowanzi.github.io/categories/java/"/>
+    
+    
+      <category term="java术语简称 java常用术语简称" scheme="https://syxiaowanzi.github.io/tags/java%E6%9C%AF%E8%AF%AD%E7%AE%80%E7%A7%B0-java%E5%B8%B8%E7%94%A8%E6%9C%AF%E8%AF%AD%E7%AE%80%E7%A7%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>多线程编程常用术语</title>
